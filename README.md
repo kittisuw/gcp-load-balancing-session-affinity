@@ -1,4 +1,4 @@
-# Create a VM instance from an image
+# Create Google Cloud HTTP(S) Load Balancing with session affinity
 ## Authorize gcloud to access the Cloud Platform with Google user credentials
 ```bash
 gcloud auth login
@@ -72,7 +72,7 @@ NAME                                         ZONE               MACHINE_TYPE   P
 lbtest01                                     asia-southeast1-b  e2-medium                   10.148.0.63    34.126.88.251   RUNNING
 lbtest02                                     asia-southeast1-b  e2-medium                   10.148.15.192  35.240.151.51   RUNNING
 ```
-
+>>https://cloud.google.com/compute/docs/instances/create-start-instance#startinstancegcloud
 ## Install docker,docker-compose
 ```bash
 #Install docker
@@ -119,9 +119,19 @@ docker-compose -p testapp stop
  $ curl -i localhost:3400
  $ curl -i localhost:3500
 ```
+## Creat Loadbalance
+1. create instanch group(unmanage) for group 2 VMs name lbtest
+2. Create HTTP Load balance
+
+
+
+
+
+
+
+
 ## Clean up
 ```bash
 (gcloud compute instances delete --zone "asia-southeast1-b" lbtest01
 gcloud compute instances delete --zone "asia-southeast1-b" lbtest02)
 ```
->https://cloud.google.com/compute/docs/instances/create-start-instance#startinstancegcloud
