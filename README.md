@@ -41,12 +41,9 @@ Your active configuration is: [default]
 $ gcloud compute images list|grep ubuntu-2004-lts
 ubuntu-2004-focal-v20210927                           ubuntu-os-cloud      ubuntu-2004-lts                               READY
 $ gcloud compute machine-types list|grep e2-medium|grep asia-southeast
-e2-medium         asia-southeast1-a          2     4.00
+...
 e2-medium         asia-southeast1-b          2     4.00
-e2-medium         asia-southeast1-c          2     4.00
-e2-medium         asia-southeast2-a          2     4.00
-e2-medium         asia-southeast2-c          2     4.00
-e2-medium         asia-southeast2-b          2     4.00
+...
 ```
 ## Create 2 VMs for testing load balance
 ```bash
@@ -60,18 +57,20 @@ gcloud compute instances create lbtest01 \
 gcloud compute instances create lbtest02 \
 --image=ubuntu-2004-focal-v20210927 \
 --image-project=ubuntu-os-cloud \
---machine-type=e2-medium
-#List VMs
-gcloud compute instances list)
-
+--machine-type=e2-medium)
+...
 Created [https://www.googleapis.com/compute/v1/projects/neo-loan/zones/asia-southeast1-b/instances/lbtest01].
 NAME      ZONE               MACHINE_TYPE  PREEMPTIBLE  INTERNAL_IP  EXTERNAL_IP    STATUS
 lbtest01  asia-southeast1-b  e2-medium                  10.148.0.63  34.126.88.251  RUNNING
 Created [https://www.googleapis.com/compute/v1/projects/neo-loan/zones/asia-southeast1-b/instances/lbtest02].
 NAME      ZONE               MACHINE_TYPE  PREEMPTIBLE  INTERNAL_IP    EXTERNAL_IP    STATUS
+lbtest01  asia-southeast1-b  e2-medium                  10.148.0.63  34.126.88.251  RUNNING
+...
+#List VMs
+$ gcloud compute instances list
+NAME                                         ZONE               MACHINE_TYPE   PREEMPTIBLE  INTERNAL_IP    EXTERNAL_IP     STATUS
 lbtest01                                     asia-southeast1-b  e2-medium                   10.148.0.63    34.126.88.251   RUNNING
 lbtest02                                     asia-southeast1-b  e2-medium                   10.148.15.192  35.240.151.51   RUNNING
-
 ```
 
 # Install docker,docker-compose
