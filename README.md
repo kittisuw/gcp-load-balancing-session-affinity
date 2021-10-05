@@ -97,8 +97,8 @@ $ docker-compose --version
 # Runnig application
 >https://nodejs.org/de/docs/guides/nodejs-docker-webapp/
 ```
-mkdir testapp
-cd testapp
+$ mkdir testapp
+$ cd testapp
 #Run container and specific project name
 $ docker-compose -p testapp up -d
 CONTAINER ID   IMAGE                   COMMAND                  CREATED         STATUS         PORTS                                       NAMES
