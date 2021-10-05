@@ -73,7 +73,7 @@ lbtest01                                     asia-southeast1-b  e2-medium       
 lbtest02                                     asia-southeast1-b  e2-medium                   10.148.15.192  35.240.151.51   RUNNING
 ```
 
-# Install docker,docker-compose
+## Install docker,docker-compose
 ```bash
 #Install docker
 $ sudo apt update
@@ -86,7 +86,6 @@ $ sudo apt install docker-ce -y
 $ sudo systemctl status docker --no-pager
 $ sudo usermod -aG docker ${USER}
 $ sudo docker info
-
 #Install docker-compose
 $ sudo apt install jq -y
 $ compose_version=$(curl https://api.github.com/repos/docker/compose/releases/latest | jq .name -r)
@@ -115,12 +114,12 @@ docker-compose -p testapp stop
  ⠿ Container node-web-app-01  Stopped 
 ```
 > rebuild with run container "docker-compose -p testapp up -d --build"
-# Test call container
+## Test call container
 ```bash
  $ curl -i localhost:3400
  $ curl -i localhost:3500
 ```
-# Clean up
+## Clean up
 ```bash
 (gcloud compute instances delete --zone "asia-southeast1-b" lbtest01
 gcloud compute instances delete --zone "asia-southeast1-b" lbtest02)
