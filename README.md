@@ -45,7 +45,7 @@ $ gcloud compute machine-types list|grep e2-medium|grep asia-southeast
 e2-medium         asia-southeast1-b          2     4.00
 ...
 ```
-## Create 2 VMs for testing load balance
+## Create 2 VMs
 ```bash
 $ (
 #Create vm01
