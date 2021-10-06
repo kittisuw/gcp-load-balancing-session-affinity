@@ -114,10 +114,8 @@ web02               "docker-entrypoint.s…"   web02               running      
 curl -i 0:3400
 curl -i 0:3500
 ```
-> Stop container of this project   
-> $ docker-compose -p testapp stop   
-> Rebuild with run container   
-> $ docker-compose -p testapp up -d --build
+> Stop container of this project :$ docker-compose -p testapp stop   
+> Rebuild with run container:$ docker-compose -p testapp up -d --build
 ## Creat Loadbalance
 1. create instanch group(unmanage) for group 2 VMs name lbtest
 2. Create HTTP Load balance
