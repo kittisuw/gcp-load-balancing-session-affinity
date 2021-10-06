@@ -1,3 +1,4 @@
+<img src="https://res.cloudinary.com/dad08bn3f/image/upload/v1619329089/github/gcloud%20cli/gcloud_el0pxc.png" width="100"><br>
 # Create Google Cloud HTTP(S) Load Balancing with session affinity
 ### Step 0 - prerequisite
 0.1 - Installing Google Cloud SDK : https://cloud.google.com/sdk/docs/install
