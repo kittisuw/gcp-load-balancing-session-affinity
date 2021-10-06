@@ -97,10 +97,10 @@ $ docker-compose --version
 # Runnig application
 >https://nodejs.org/de/docs/guides/nodejs-docker-webapp/
 ```
-$ mkdir testapp
+$ git clone https://github.com/kittisuw/gcp-load-balancing-session-affinity.git
 $ cd testapp
 #Run container and specific project name
-$ docker-compose -p testapp up -d
+$ docker-compose -p testapp up -d --build
 [+] Running 3/3
 ...
 
