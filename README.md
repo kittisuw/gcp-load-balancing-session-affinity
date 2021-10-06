@@ -97,7 +97,7 @@ $ sudo curl -L https://github.com/docker/compose/releases/download/$compose_vers
 $ sudo chmod +x $output
 $ docker-compose --version
 ```
-# Step 6 — Runnig container application both lbtest01,lbtest02
+### Step 6 — Runnig container application both lbtest01,lbtest02
 >https://nodejs.org/de/docs/guides/nodejs-docker-webapp/
 ```
 $ git clone https://github.com/kittisuw/gcp-load-balancing-session-affinity.git
@@ -120,12 +120,8 @@ curl -i 0:3500
 > Stop container of this project :$ docker-compose -p testapp stop   
 > Rebuild with run container:$ docker-compose -p testapp up -d --build
 ### Step 7 —  Creat Loadbalance
-#### 7.1 - Create Unmanage Instace group for grouping 2 VMs name lbtest
-opopo
-#### 7.2 - Create HTTP Load balance(L7)
-oopweowpeowpeo
-
-
+7.1 - Create Unmanage Instace group for grouping 2 VMs name lbtest   
+7.2 - Create HTTP Load balance(L7)   
 
 
 
