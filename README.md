@@ -121,8 +121,9 @@ curl -i 0:3500
 > Stop container of this project :$ docker-compose -p testapp stop   
 > Rebuild with run container:$ docker-compose -p testapp up -d --build
 ### Step 7 —  Creat Loadbalance
-7.1 - Create Unmanage Instace group for grouping 2 VMs name lbtest  
+7.1 - Create Unmanage Instace group for grouping 2 VMs name uig01  
 ![g1](img/group-01.png)
+
 ![g2](img/group-02.png)
 
 
