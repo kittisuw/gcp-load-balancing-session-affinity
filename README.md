@@ -1,4 +1,6 @@
 # Create Google Cloud HTTP(S) Load Balancing with session affinity
+### Step 0 - prerequisite
+0.1 Installing Google Cloud SDK : https://cloud.google.com/sdk/docs/install
 ### Step 1 — Authorize gcloud to access the Cloud Platform with Google user credentials
 ```bash
 gcloud auth login
