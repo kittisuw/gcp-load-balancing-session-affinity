@@ -103,11 +103,13 @@ $ cd testapp
 $ docker-compose -p testapp up -d
 [+] Running 3/3
 ...
+
 #Check container run inside this project
 $ docker-compose -p testapp ps
 NAME                COMMAND                  SERVICE             STATUS              PORTS
 web01               "docker-entrypoint.s…"   web01               running             0.0.0.0:3400->8080/tcp, :::3400->8080/tcp
 web02               "docker-entrypoint.s…"   web02               running             0.0.0.0:3500->8080/tcp, :::3500->8080/tcp
+
 #Testing call container
 curl -i http://0:3400
 curl -i http://0:3500
