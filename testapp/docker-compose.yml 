@@ -2,7 +2,7 @@ version: "3.8"
 services:
   web01:
     container_name: web01
-    #opt1: use this option if you would like to build and using from local registry
+    #opt1: use this option if you would like to build and pull from local registry
     build:
       context: ./
       dockerfile: Dockerfile
