@@ -37,7 +37,7 @@ project = neo-loan
 Your active configuration is: [default]
 ```
 ### Step 3 — List Image,Machine type that region available   
-> this step require install ubuntu 20.04 LTS on size e2-medium
+> this step require install Ubuntu 20.04 LTS on size e2-medium
 ```
 $ gcloud compute images list|grep ubuntu-2004-lts
 ubuntu-2004-focal-v20210927                           ubuntu-os-cloud      ubuntu-2004-lts                               READY
@@ -49,12 +49,12 @@ e2-medium         asia-southeast1-b          2     4.00
 ### Step 4 — Create 2 VMs
 ```bash
 $ (
-#Create vm01
+#Create VM:lbtest01
 gcloud compute instances create lbtest01 \
 --image=ubuntu-2004-focal-v20210927 \
 --image-project=ubuntu-os-cloud \
 --machine-type=e2-medium
-#Create vm02
+#Create VM:lbtest02
 gcloud compute instances create lbtest02 \
 --image=ubuntu-2004-focal-v20210927 \
 --image-project=ubuntu-os-cloud \
@@ -74,7 +74,7 @@ lbtest01                                     asia-southeast1-b  e2-medium       
 lbtest02                                     asia-southeast1-b  e2-medium                   10.148.15.192  35.240.151.51   RUNNING
 ```
 >>https://cloud.google.com/compute/docs/instances/create-start-instance#startinstancegcloud
-### Step 5 — Install docker,docker-compose
+### Step 5 — Install docker,docker-compose both lbtest01,lbtest02
 ```bash
 #Install docker
 $ sudo apt update
@@ -95,7 +95,7 @@ $ sudo curl -L https://github.com/docker/compose/releases/download/$compose_vers
 $ sudo chmod +x $output
 $ docker-compose --version
 ```
-# Step 6 — Runnig application
+# Step 6 — Runnig container application both lbtest01,lbtest02
 >https://nodejs.org/de/docs/guides/nodejs-docker-webapp/
 ```
 $ git clone https://github.com/kittisuw/gcp-load-balancing-session-affinity.git
@@ -118,6 +118,8 @@ curl -i 0:3500
 > Stop container of this project :$ docker-compose -p testapp stop   
 > Rebuild with run container:$ docker-compose -p testapp up -d --build
 ### Step 7 —  Creat Loadbalance
+#### 7.1 - Create Unmanage Instace group for grouping 2 VMs name lbtest
+
 1. create instanch group(unmanage) for group 2 VMs name lbtest
 2. Create HTTP Load balance
 
