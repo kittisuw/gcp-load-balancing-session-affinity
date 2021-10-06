@@ -121,17 +121,18 @@ curl -i 0:3500
 > Stop container of this project :$ docker-compose -p testapp stop   
 > Rebuild with run container:$ docker-compose -p testapp up -d --build
 ### Step 7 —  Creat Loadbalance
-7.1 - Create Unmanage Instace group for grouping 2 VMs name uig01   
+### 7.1 - Create Unmanage Instace group for grouping 2 VMs name uig01   
 ![g1](img/group-01.png)     
    
 ![g2](img/group-02.png)   
 > limitation of Unmanage Instance group is all VMs instance are locate only one zone   
 
-7.2 - Create HTTP Load balance(L7)   
+### 7.2 - Create HTTP Load balance(L7)      
+7.2.1 Click "CREATE LOAD BALANCER"
 ![lb](img/lb-01.png)   
-
+7.2.1 On HTTP(s) Load balancing Click "START CONFIGURATION"
 ![lb](img/lb-02.png)   
-
+7.2.1 Select option "From Internet to my VMs"
 ![lb](img/lb-03.png) 
 
 ![lb](img/lb-04.png) 
@@ -155,3 +156,5 @@ gcloud compute instances delete --zone "asia-southeast1-b" lbtest02)
 
 
 http://lbtest.blockfint.com/
+
+https://www.youtube.com/watch?v=2yaq-0C-cmU
