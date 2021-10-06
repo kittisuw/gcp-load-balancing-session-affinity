@@ -110,9 +110,9 @@ NAME                COMMAND                  SERVICE             STATUS         
 web01               "docker-entrypoint.s…"   web01               running             0.0.0.0:3400->8080/tcp, :::3400->8080/tcp
 web02               "docker-entrypoint.s…"   web02               running             0.0.0.0:3500->8080/tcp, :::3500->8080/tcp
 
-#Testing call container
-curl -i http://0:3400
-curl -i http://0:3500
+#Testing call container using http
+curl -i 0:3400
+curl -i 0:3500
 ```
 > Stop container of this project   
 > $ docker-compose -p testapp stop   
