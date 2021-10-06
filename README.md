@@ -134,9 +134,24 @@ curl -i 0:3500
 
 ![lb](img/lb-03.png) 
 
+![lb](img/lb-04.png) 
+![lb](img/lb-05.png) 
+![lb](img/lb-06.png) 
+![lb](img/lb-07.png) 
+![lb](img/lb-08.png) 
+![lb](img/lb-09.png) 
+![lb](img/lb-10.png) 
+![lb](img/lb-11.png) 
+![lb](img/lb-12.png)
+![lb](img/lb-13.png) 
 
 ## Clean up
 ```bash
 (gcloud compute instances delete --zone "asia-southeast1-b" lbtest01
 gcloud compute instances delete --zone "asia-southeast1-b" lbtest02)
 ```
+
+
+
+
+http://lbtest.blockfint.com/
