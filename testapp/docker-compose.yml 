@@ -1,0 +1,20 @@
+version: "3.8"
+services:
+  web01:
+    container_name: web01
+    build:
+      context: ./
+      dockerfile: Dockerfile
+#image: kittisuw/node-web-app:latest
+    ports:
+      - 3400:8080
+    restart: always
+
+  web02:
+    container_name: web02
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - 3500:8080
+    restart: always
