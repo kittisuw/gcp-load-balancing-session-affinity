@@ -2,10 +2,12 @@ version: "3.8"
 services:
   web01:
     container_name: web01
+    #opt1: use this option if you would like to build and using from local registry
     build:
       context: ./
       dockerfile: Dockerfile
-#image: kittisuw/node-web-app:latest
+    #opt2: use this option if you would like to pull container only
+    #image: kittisuw/node-web-app:latest
     ports:
       - 3400:8080
     restart: always
