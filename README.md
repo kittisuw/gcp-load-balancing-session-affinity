@@ -101,24 +101,21 @@ $ mkdir testapp
 $ cd testapp
 #Run container and specific project name
 $ docker-compose -p testapp up -d
-CONTAINER ID   IMAGE                   COMMAND                  CREATED         STATUS         PORTS                                       NAMES
-3541c3e71578   kittisuw/node-web-app   "docker-entrypoint.s…"   4 seconds ago   Up 3 seconds   0.0.0.0:3500->8080/tcp, :::3500->8080/tcp   node-web-app-01
-
+[+] Running 3/3
+...
 #Check container run inside this project
 $ docker-compose -p testapp ps
 NAME                COMMAND                  SERVICE             STATUS              PORTS
-node-web-app-01     "docker-entrypoint.s…"   node-web-app        running             0.0.0.0:3500->8080/tcp, :::3500->8080/tcp
-#Stop container inside this project
-docker-compose -p testapp stop
-[+] Running 1/1
- ⠿ Container node-web-app-01  Stopped 
+web01               "docker-entrypoint.s…"   web01               running             0.0.0.0:3400->8080/tcp, :::3400->8080/tcp
+web02               "docker-entrypoint.s…"   web02               running             0.0.0.0:3500->8080/tcp, :::3500->8080/tcp
+#Testing call container
+curl -i http://0:3400
+curl -i http://0:3500
 ```
-> rebuild with run container "docker-compose -p testapp up -d --build"
-## Test call container
-```bash
- $ curl -i localhost:3400
- $ curl -i localhost:3500
-```
+> Stop container of this project   
+> $ docker-compose -p testapp stop   
+> Rebuild with run container   
+> $ docker-compose -p testapp up -d --build
 ## Creat Loadbalance
 1. create instanch group(unmanage) for group 2 VMs name lbtest
 2. Create HTTP Load balance
