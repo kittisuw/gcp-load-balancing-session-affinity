@@ -36,7 +36,8 @@ project = neo-loan
 
 Your active configuration is: [default]
 ```
-### Step 3 — List Image,Machine type that region available
+### Step 3 — List Image,Machine type that region available   
+> this step require install ubuntu 20.04 LTS on size e2-medium
 ```
 $ gcloud compute images list|grep ubuntu-2004-lts
 ubuntu-2004-focal-v20210927                           ubuntu-os-cloud      ubuntu-2004-lts                               READY
