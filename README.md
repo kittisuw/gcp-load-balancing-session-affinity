@@ -125,7 +125,8 @@ curl -i 0:3500
 ![g1](img/group-01.png)     
    
 ![g2](img/group-02.png)   
-> limitation of Unmanage Instacne group is all VMs instance are locate only one zone   
+> limitation of Unmanage Instance group is all VMs instance are locate only one zone   
+
 7.2 - Create HTTP Load balance(L7)   
 
 
