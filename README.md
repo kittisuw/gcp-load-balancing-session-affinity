@@ -119,10 +119,9 @@ curl -i 0:3500
 > Rebuild with run container:$ docker-compose -p testapp up -d --build
 ### Step 7 —  Creat Loadbalance
 #### 7.1 - Create Unmanage Instace group for grouping 2 VMs name lbtest
-
-1. create instanch group(unmanage) for group 2 VMs name lbtest
-2. Create HTTP Load balance
-
+opopo
+#### 7.2 - Create HTTP Load balance(L7)
+oopweowpeowpeo
 
 
 
