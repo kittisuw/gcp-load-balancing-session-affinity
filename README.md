@@ -1,9 +1,9 @@
 # Create Google Cloud HTTP(S) Load Balancing with session affinity
-## Authorize gcloud to access the Cloud Platform with Google user credentials
+### Step 1 — Authorize gcloud to access the Cloud Platform with Google user credentials
 ```bash
 gcloud auth login
 ```
-## Set Default Project,Region,Zone
+### Step 2 — Set Default Project,Region,Zone
 ```bash
 #Set,Get default project
 $ gcloud config set project neo-loan
@@ -36,7 +36,7 @@ project = neo-loan
 
 Your active configuration is: [default]
 ```
-## List Image,Machine type that region available
+### Step 3 — List Image,Machine type that region available
 ```
 $ gcloud compute images list|grep ubuntu-2004-lts
 ubuntu-2004-focal-v20210927                           ubuntu-os-cloud      ubuntu-2004-lts                               READY
@@ -45,7 +45,7 @@ $ gcloud compute machine-types list|grep e2-medium|grep asia-southeast
 e2-medium         asia-southeast1-b          2     4.00
 ...
 ```
-## Create 2 VMs
+### Step 4 — Create 2 VMs
 ```bash
 $ (
 #Create vm01
@@ -73,7 +73,7 @@ lbtest01                                     asia-southeast1-b  e2-medium       
 lbtest02                                     asia-southeast1-b  e2-medium                   10.148.15.192  35.240.151.51   RUNNING
 ```
 >>https://cloud.google.com/compute/docs/instances/create-start-instance#startinstancegcloud
-## Install docker,docker-compose
+### Step 5 — Install docker,docker-compose
 ```bash
 #Install docker
 $ sudo apt update
@@ -94,7 +94,7 @@ $ sudo curl -L https://github.com/docker/compose/releases/download/$compose_vers
 $ sudo chmod +x $output
 $ docker-compose --version
 ```
-# Runnig application
+# Step 6 — Runnig application
 >https://nodejs.org/de/docs/guides/nodejs-docker-webapp/
 ```
 $ git clone https://github.com/kittisuw/gcp-load-balancing-session-affinity.git
@@ -116,7 +116,7 @@ curl -i 0:3500
 ```
 > Stop container of this project :$ docker-compose -p testapp stop   
 > Rebuild with run container:$ docker-compose -p testapp up -d --build
-## Creat Loadbalance
+### Step 7 —  Creat Loadbalance
 1. create instanch group(unmanage) for group 2 VMs name lbtest
 2. Create HTTP Load balance
 
