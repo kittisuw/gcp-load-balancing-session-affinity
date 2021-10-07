@@ -1,12 +1,12 @@
 <img src="https://res.cloudinary.com/dad08bn3f/image/upload/v1619329089/github/gcloud%20cli/gcloud_el0pxc.png" width="100"><br>
 # Create Google Cloud HTTP(S) Load Balancing with session affinity
-### Step 0 - prerequisite
+# Step 0 - prerequisite
 0.1 - Installing Google Cloud SDK : https://cloud.google.com/sdk/docs/install
-### Step 1 — Authorize gcloud to access the Cloud Platform with Google user credentials
+# Step 1 — Authorize gcloud to access the Cloud Platform with Google user credentials
 ```bash
 gcloud auth login
 ```
-### Step 2 — Set Default Project,Region,Zone
+# Step 2 — Set Default Project,Region,Zone
 ```bash
 #Set,Get default project
 $ gcloud config set project neo-loan
@@ -39,7 +39,7 @@ project = neo-loan
 
 Your active configuration is: [default]
 ```
-### Step 3 — List Image,Machine type that region available   
+# Step 3 — List Image,Machine type that region available   
 > this step require install Ubuntu 20.04 LTS on size e2-medium
 ```
 $ gcloud compute images list|grep ubuntu-2004-lts
@@ -49,7 +49,7 @@ $ gcloud compute machine-types list|grep e2-medium|grep asia-southeast
 e2-medium         asia-southeast1-b          2     4.00
 ...
 ```
-### Step 4 — Create 2 VMs
+# Step 4 — Create 2 VMs
 ```bash
 $ (
 #Create VM:lbtest01
@@ -77,7 +77,7 @@ lbtest01                                     asia-southeast1-b  e2-medium       
 lbtest02                                     asia-southeast1-b  e2-medium                   10.148.15.192  35.240.151.51   RUNNING
 ```
 >>https://cloud.google.com/compute/docs/instances/create-start-instance#startinstancegcloud
-### Step 5 — Install docker,docker-compose both lbtest01,lbtest02
+# Step 5 — Install docker,docker-compose both lbtest01,lbtest02
 ```bash
 #Install docker
 $ sudo apt update
@@ -98,7 +98,7 @@ $ sudo curl -L https://github.com/docker/compose/releases/download/$compose_vers
 $ sudo chmod +x $output
 $ docker-compose --version
 ```
-### Step 6 — Runnig container application both lbtest01,lbtest02
+# Step 6 — Runnig container application both lbtest01,lbtest02
 >https://nodejs.org/de/docs/guides/nodejs-docker-webapp/
 ```
 $ git clone https://github.com/kittisuw/gcp-load-balancing-session-affinity.git
@@ -120,7 +120,7 @@ curl -i 0:3500
 ```
 > Stop container of this project :$ docker-compose -p testapp stop   
 > Rebuild with run container:$ docker-compose -p testapp up -d --build
-### Step 7 —  Creat Loadbalance
+# Step 7 —  Creat Loadbalance
 ### 7.1 - Create Unmanage Instace group for grouping 2 VMs name uig01   
 7.1.1 - Click Create instance group   
 
@@ -161,13 +161,14 @@ curl -i 0:3500
  - protocal : https
  - ip address : #don't use ephemeral be using reserve public ip
  - certificate # google allow using 2 type 1. self sign 2.google-managed certificate
+  
 ![lb](img/lb-12.png)   
 
 7.2.10 Click create
 ![lb](img/lb-13.png) 
 
 7.2.11 mapping domain with load balance public ip and testing
-## Clean up
+# Clean up
 ```bash
 (gcloud compute instances delete --zone "asia-southeast1-b" lbtest01
 gcloud compute instances delete --zone "asia-southeast1-b" lbtest02)
