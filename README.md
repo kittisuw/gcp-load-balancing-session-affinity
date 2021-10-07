@@ -100,7 +100,7 @@ $ docker-compose --version
 ```
 # Step 6 — Runnig container application both lbtest01,lbtest02
 >https://nodejs.org/de/docs/guides/nodejs-docker-webapp/
-```
+```bash
 $ git clone https://github.com/kittisuw/gcp-load-balancing-session-affinity.git
 $ cd testapp
 #Run container and specific project name
