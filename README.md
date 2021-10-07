@@ -160,10 +160,12 @@ curl -i 0:3500
  - protocal : https
  - ip address : #don't use ephemeral be using reserve public ip
  - certificate # google allow using 2 type 1. self sign 2.google-managed certificate
-![lb](img/lb-12.png)
-7.2.8 Click create
+![lb](img/lb-12.png)   
+
+7.2.9 Click create
 ![lb](img/lb-13.png) 
 
+7.2.10 mapping domain with load balance public ip and testing
 ## Clean up
 ```bash
 (gcloud compute instances delete --zone "asia-southeast1-b" lbtest01
