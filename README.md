@@ -98,8 +98,7 @@ $ sudo curl -L https://github.com/docker/compose/releases/download/$compose_vers
 $ sudo chmod +x $output
 $ docker-compose --version
 ```
-# Step 6 — Runnig container application both lbtest01,lbtest02
->https://nodejs.org/de/docs/guides/nodejs-docker-webapp/
+# Step 6 — Runnig simple node.js application both lbtest01,lbtest02
 ```bash
 $ git clone https://github.com/kittisuw/gcp-load-balancing-session-affinity.git
 $ cd testapp
