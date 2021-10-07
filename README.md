@@ -122,8 +122,15 @@ curl -i 0:3500
 > Rebuild with run container:$ docker-compose -p testapp up -d --build
 ### Step 7 —  Creat Loadbalance
 ### 7.1 - Create Unmanage Instace group for grouping 2 VMs name uig01   
+7.1.1 - Click Create instance group   
+
 ![g1](img/group-01.png)     
-   
+7.1.2 - Click New Unmanaged Instance group
+- name : ug-01
+- Location : #Region and Zone that VMs are locate
+- Port numbers : #Port of container
+- VM instance : #Destination VMs that you would like to add in group
+
 ![g2](img/group-02.png)   
 > limitation of Unmanage Instance group is all VMs instance are locate only one zone   
 
@@ -132,9 +139,13 @@ curl -i 0:3500
 ![lb](img/lb-01.png)   
 7.2.1 On HTTP(s) Load balancing Click "START CONFIGURATION"
 ![lb](img/lb-02.png)   
-7.2.1 Select option "From Internet to my VMs"
+7.2.2 Select option "From Internet to my VMs"
 ![lb](img/lb-03.png) 
-
+7.2.2 Create backend service
+ - Name: be01   
+ - Backend type: Instance group   
+ - Instancge group: uid01 #instance group that you create in step 7.1   
+   
 ![lb](img/lb-04.png) 
 ![lb](img/lb-05.png) 
 ![lb](img/lb-06.png) 
@@ -155,6 +166,8 @@ gcloud compute instances delete --zone "asia-southeast1-b" lbtest02)
 
 
 
+https://cloud.google.com/load-balancing/docs/https/setting-up-http-https-redirect
 http://lbtest.blockfint.com/
-
 https://www.youtube.com/watch?v=2yaq-0C-cmU
+https://blog.realkinetic.com/http-to-https-using-google-cloud-load-balancer-dda57ac97c
+
