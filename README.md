@@ -141,20 +141,27 @@ curl -i 0:3500
 ![lb](img/lb-02.png)   
 7.2.2 Select option "From Internet to my VMs"
 ![lb](img/lb-03.png) 
-7.2.2 Create backend service
+7.2.3 Create backend service
  - Name: be01   
  - Backend type: Instance group   
- - Instancge group: uid01 #instance group that you create in step 7.1   
-   
-![lb](img/lb-04.png) 
-![lb](img/lb-05.png) 
-![lb](img/lb-06.png) 
+ - Instancge group: uig-01 #instance group that you create in step 7.1    
+![lb](img/lb-04.png)  
+
+7.2.4 Add Helth Check thate represent your vm is available Eg. port 3400 is first container port
+![lb](img/lb-06.png)   
+7.2.5 Click ADVANCED CONFIGURATIONS > Session Affinity > Genarated Cookie
 ![lb](img/lb-07.png) 
+7.2.6 Select backend service
 ![lb](img/lb-08.png) 
+7.2.7 skip Host and path Rule #if you would like to add routing host,path base config this step
 ![lb](img/lb-09.png) 
-![lb](img/lb-10.png) 
-![lb](img/lb-11.png) 
+7.2.8 Config Frontend 
+ - name: fe-https
+ - protocal : https
+ - ip address : #don't use ephemeral be using reserve public ip
+ - certificate # google allow using 2 type 1. self sign 2.google-managed certificate
 ![lb](img/lb-12.png)
+7.2.8 Click create
 ![lb](img/lb-13.png) 
 
 ## Clean up
