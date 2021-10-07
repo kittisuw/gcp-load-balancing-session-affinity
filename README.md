@@ -169,12 +169,3 @@ curl -i 0:3500
 (gcloud compute instances delete --zone "asia-southeast1-b" lbtest01
 gcloud compute instances delete --zone "asia-southeast1-b" lbtest02)
 ```
-
-
-
-
-https://cloud.google.com/load-balancing/docs/https/setting-up-http-https-redirect
-http://lbtest.blockfint.com/
-https://www.youtube.com/watch?v=2yaq-0C-cmU
-https://blog.realkinetic.com/http-to-https-using-google-cloud-load-balancer-dda57ac97c
-
